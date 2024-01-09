@@ -1,0 +1,459 @@
+/* ==========================================================================================
+   -- Site Header --
+========================================================================================== */
+.site-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 32px 0;
+  z-index: 1000;
+  transition: ease all 0.3s;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  .header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    .site-navigation ul li {
+      display: inline-flex;
+      a {
+        padding: 8px 16px;
+        color: $white;
+        &:hover {
+          color: $theme-color2;
+        }
+      }
+    }
+  }
+}
+
+.site-logo {
+  img {
+    width: 100px;
+  }
+}
+
+.site-header,
+.site-mobile-header {
+  &.sticky-header {
+    padding: 16px 0;
+    background: $theme-color1;
+  }
+}
+
+.site-mobile-header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 32px 0;
+  transition: ease all 0.3s;
+
+  .mobile-nav-toggle {
+    .las {
+      color: $white;
+      font-size: 32px;
+    }
+  }
+}
+
+.mobile-navigation-wrap {
+  position: fixed;
+  width: 320px;
+  right: -100%;
+  top: 0;
+  z-index: 1000;
+  background: $theme-color1;
+  height: 100%;
+  transition: ease all 0.3s;
+
+  .nav-header {
+    display: flex;
+    justify-content: flex-end;
+    .las {
+      color: $white;
+      font-size: 32px;
+    }
+  }
+
+  .mobile-nav {
+    ul {
+      li {
+        display: flex;
+        margin-bottom: 16px;
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &.show {
+    right: 0;
+  }
+}
+
+/* ==========================================================================================
+   -- Site Banner --
+========================================================================================== */
+
+.site-banner {
+  background: url("../images/bannerBg.png") no-repeat center;
+  background-size: cover;
+  padding-top: 180px;
+
+  @include max992 {
+    padding-top: 130px;
+    padding-bottom: 50px;
+  }
+
+  .banner-heading {
+    margin-top: -180px;
+
+    @include max992 {
+      margin-top: 0;
+    }
+    .banner-text {
+      margin-bottom: 40px;
+      h1 {
+        margin-bottom: 24px;
+        line-height: 1.4;
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+
+    .banner-download-buttons {
+      display: flex;
+      gap: 16px;
+      a {
+        display: inline-block;
+        -webkit-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        transition: all 0.3s;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+      img {
+        width: 196px;
+      }
+    }
+  }
+}
+
+/* ==========================================================================================
+   -- About -- 
+========================================================================================== */
+.ceo-message-wrap {
+  background-color: $theme-color1;
+  color: $white;
+  border-radius: $border-radius-xxl;
+
+  .ceo-image img {
+    border-radius: $border-radius-md;
+  }
+  .ceo-message-text {
+    font-size: 32px;
+    font-weight: 600;
+
+    @include max1200 {
+      font-size: 24px;
+    }
+
+    @include max992 {
+      font-weight: normal;
+    }
+
+    @include max767 {
+      font-size: 18px;
+    }
+  }
+}
+
+/* ==========================================================================================
+   -- General Features --
+========================================================================================== */
+.feature-mobile-image {
+  img {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================================
+   -- Extended Features --
+========================================================================================== */
+.extended-feature-content {
+  padding: 0 60px;
+
+  @include max1200 {
+    padding: 0;
+  }
+}
+
+.extended-feature-image {
+  width: 100%;
+}
+
+/* ==========================================================================================
+   -- Pricing Plans --
+========================================================================================== */
+
+.pricing-plan-single {
+  border: 1px solid $grey-color;
+  border-radius: $border-radius-xxl;
+
+  .anchor-button {
+    width: 100%;
+  }
+
+  .plan-cost {
+    .price {
+      font-size: $h2-font-size;
+      font-weight: 600;
+      color: $theme-color2;
+    }
+  }
+
+  &.plan-professional {
+    color: #fff;
+    background: $theme-color1;
+    border-color: $theme-color1;
+
+    .plan-heading {
+      h3 {
+        color: $white;
+      }
+    }
+
+    .plan-cost {
+      .price {
+        color: $white;
+      }
+    }
+  }
+}
+
+/* ==========================================================================================
+   -- Trusted By --
+========================================================================================== */
+.third-party-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  img {
+    width: auto;
+    height: 54px;
+    object-fit: contain;
+  }
+}
+
+/* ==========================================================================================
+ -- Testimonials --
+========================================================================================== */
+
+.testimonials-box {
+  background: $theme-color1;
+  color: $white;
+  border-radius: $border-radius-xxl;
+
+  .slick-dots {
+    bottom: -35px;
+    li {
+      button {
+        &:before {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .testie-quote {
+    .las {
+      font-size: 88px;
+    }
+  }
+
+  .testimonial-slider {
+    .testimonie-text {
+      font-size: 24px;
+      font-weight: 400;
+
+      @include max1200 {
+        font-size: 24px;
+      }
+
+      @include max992 {
+        font-weight: normal;
+      }
+
+      @include max767 {
+        font-size: 18px;
+      }
+    }
+
+    .testimonie-meta {
+      .avatar {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 50px;
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .testimonie-thumb-slider {
+    img {
+      border-radius: $border-radius-md;
+    }
+  }
+}
+
+/* ==========================================================================================
+   -- Blogs --
+========================================================================================== */
+.blog-thumb-image {
+  img {
+    border-radius: $border-radius-md;
+  }
+}
+
+.blog-title {
+  a {
+    color: $theme-color2;
+
+    &:hover {
+      color: $theme-color1;
+    }
+  }
+}
+
+/* ==========================================================================================
+   -- App Download --
+========================================================================================== */
+.app-downlaod {
+  background: $theme-color1;
+  border-radius: $border-radius-xxl;
+  color: $white;
+  position: relative;
+
+  .download-stats {
+    .users-tack {
+      img {
+        max-width: 130px;
+      }
+    }
+  }
+
+  .download-buttons {
+    display: inline-flex;
+    gap: 20px;
+    a {
+      display: inline-block;
+      -webkit-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      transition: all 0.3s;
+      img {
+        width: 176px;
+      }
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+/* ==========================================================================================
+   -- Contact --
+========================================================================================== */
+.contact-form {
+  textarea {
+    min-height: 200px;
+  }
+
+  input[type="text"],
+  textarea {
+    &:focus {
+      border-color: $theme-color1;
+    }
+  }
+
+  .submit-wrap {
+    button {
+      @include max425 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* ==========================================================================================
+   -- Footer --
+========================================================================================== */
+.footer-info-logo {
+  img {
+    max-width: 100px;
+  }
+}
+
+.footer-social {
+  li {
+    display: inline-flex;
+    a {
+      color: $theme-color2;
+      font-size: 32px;
+      &:hover {
+        color: $theme-color1;
+      }
+    }
+  }
+}
+
+.footer-menu {
+  ul {
+    li {
+      display: flex;
+      margin: 16px 0;
+      a {
+        color: $text-color;
+
+        &:hover {
+          color: $theme-color1;
+        }
+      }
+    }
+  }
+}
+
+.newsletter-form {
+  input[type="text"] {
+    &:focus {
+      border-color: $theme-color1;
+    }
+  }
+  button {
+    width: 100%;
+  }
+}
+
+.copy-right {
+  border-top: 1px solid $grey-color;
+}

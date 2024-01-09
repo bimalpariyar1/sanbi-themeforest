@@ -1,0 +1,271 @@
+/* ==========================================================================================
+   -- Buttons --
+========================================================================================== */
+.button {
+  background: $theme-color1;
+  border: none;
+  color: $white;
+  border-radius: 50px;
+  -webkit-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:hover {
+    background: $theme-color2;
+    color: $white;
+  }
+}
+
+.anchor-button {
+  display: inline-flex;
+  border-radius: 50px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  -webkit-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &.primary {
+    background: $theme-color1;
+    color: $white;
+  }
+
+  &.secondary {
+    background: $white;
+    color: $theme-color1;
+  }
+
+  &:hover {
+    background: $theme-color2;
+    color: $white;
+  }
+}
+
+.button-lg {
+  padding: 16px 32px;
+}
+.button-sm {
+  padding: 8px 16px;
+}
+
+/* ==========================================================================================
+   -- Sections --
+========================================================================================== */
+.sp-t {
+  padding-top: $section-pading;
+}
+
+.sp-tb {
+  padding-top: $section-pading;
+  padding-bottom: $section-pading;
+}
+
+.sp-b {
+  padding-bottom: $section-pading;
+}
+
+.section-heading {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    br {
+      @include max992 {
+        display: none;
+      }
+    }
+  }
+
+  &.white {
+    color: $white;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $white;
+      br {
+        @include max992 {
+          display: none;
+        }
+      }
+    }
+
+    .sub-heading {
+      color: $white;
+    }
+  }
+}
+
+.sub-heading {
+  color: $theme-color1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* ==========================================================================================
+   -- Data Display Boxes --
+========================================================================================== */
+
+.iconbox-primary {
+  .item-icon {
+    .las,
+    .lar,
+    .lab {
+      font-size: 64px;
+      color: $theme-color1;
+    }
+  }
+
+  h3,
+  h4 {
+    margin-bottom: 16px;
+  }
+}
+
+.iconbox-secondary {
+  display: flex;
+
+  .item-icon {
+    .las,
+    .lar,
+    .lab {
+      font-size: 48px;
+      color: $theme-color1;
+    }
+  }
+
+  h3,
+  h4 {
+    margin-bottom: 8px;
+  }
+}
+
+.iconbox-list {
+  .item-icon {
+    .las,
+    .lar,
+    .lab {
+      font-size: 24px;
+      color: $theme-color1;
+    }
+  }
+}
+
+/* ==========================================================================================
+   -- Forms --
+========================================================================================== */
+input[type="text"] {
+  width: 100%;
+  padding: 16px 24px;
+  border: 1px solid $grey-color;
+  border-radius: 50px;
+}
+
+textarea {
+  width: 100%;
+  padding: 16px 24px;
+  border: 1px solid $grey-color;
+  border-radius: 32px;
+}
+
+/* ==========================================================================================
+   -- Preloader --
+========================================================================================== */
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: $theme-color1;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+    div {
+      position: absolute;
+      border: 4px solid #fff;
+      opacity: 1;
+      border-radius: 50%;
+      animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+
+      &:nth-child(2) {
+        animation-delay: -0.5s;
+      }
+    }
+  }
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================================
+     -- Back To Top --
+  ========================================================================================== */
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  background: $theme-color1;
+  color: $white;
+  border-radius: $border-radius-xxl;
+  padding: 8px;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: none;
+  &:hover {
+    background: $theme-color2;
+  }
+
+  .icon-top {
+    .las {
+      font-size: 32px;
+    }
+  }
+  .top-text {
+    font-size: 12px;
+  }
+}
